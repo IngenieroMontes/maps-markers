@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <!-- Formulario de Ingresar Marcador -->
+    <div class="form-container">
+      <form [formGroup]="markerForm">
+        <div class="form-header">
+          <h3>INGRESAR MARCADOR</h3>
+        </div>
+        <div class="form-fields">
+          <div class="form-group">
+            <label for="markerName">Nombre</label>
+            <input formControlName="name" pInputText class="custom-input" id="markerName" />
+          </div>
+          <div class="form-group">
+            <label for="markerMessage">Mensaje</label>
+            <input formControlName="message" pInputText class="custom-input" id="markerMessage" />
+          </div>
+          <div class="form-group">
+            <label for="latitude">Latitud</label>
+            <input formControlName="latitude" pInputText class="custom-input" id="latitude" />
+          </div>
+          <div class="form-group">
+            <label for="longitude">Longitud</label>
+            <input formControlName="longitude" pInputText class="custom-input" id="longitude" />
+          </div>
+          <div class="form-submit">
+            <p-button class="mr-5" (onClick)="addOrEditmarker()" label="Guardar" />
+            <p-button (onClick)="cleanform()"  severity="secondary" label="Limpiar" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Tabla de Marcadores -->
+    <div class="table-container">
+      <p-table [value]="markers" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Mensaje</th>
+            <th>Latitud</th>
+            <th>Longitud</th>
+            <th>Opciones</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-marker>
+          <tr>
+            <td>{{ marker.id }}</td>
+            <td>{{ marker.name }}</td>
+            <td>{{ marker.message }}</td>
+            <td>{{ marker.latitude }}</td>
+            <td>{{ marker.longitude }}</td>
+            <td><p-button (onClick)="editMarker(marker.id)" class="mr-5" label="Editar" severity="warning" /><p-button  (onClick)="deleteMarker(marker.id)"   label="Borrar" severity="danger"/></td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
+
+
+<div id="map" style="height: 400px; width: 100%;"></div>

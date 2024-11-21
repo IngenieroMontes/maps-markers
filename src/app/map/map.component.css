@@ -1,0 +1,77 @@
+@import "primeicons/primeicons.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mr-5{
+  margin-right: 5px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; /* Distribuir los elementos a los lados */
+  width: 100%;
+  gap: 20px; /* Espacio entre el formulario y la tabla */
+}
+
+.form-container {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.table-container {
+  flex: 2;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.table-container .p-table {
+  width: 100%;
+  max-width: 100%;
+}
